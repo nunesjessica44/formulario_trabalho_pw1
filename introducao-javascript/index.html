@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao JavaScript</title>
+</head>
+<body>
+    <style>
+        .negrito{
+            font-weight: bold;
+        }
+
+        .vermelho{
+            color:rgb(223, 41, 101);
+        }
+
+        .caixa-alta{
+            text-transform: uppercase;
+        }
+    </style>
+
+    <input 
+        type="text" 
+        name="usuario" 
+        id="loginUsuario"
+    >
+
+    <input 
+        type="password" 
+        name="senha" 
+        id="loginSenha"
+    >
+
+    <button onclick="exibir()">Entrar</button>
+
+    <p>
+       leia o <span class="negrito vermelho caixa-alta">contrato</span>
+       abaixo e depois 
+       <span class="negrito vermelho caixa-alta">assine</span>
+       envie por 
+       <span class="negrito vermelho caixa-alta">email</span>
+       . 
+    </p>
+
+    <span id="exibirDadosLogin"></span>
+
+    <script>
+        function exibir(){
+            console.log('cheguei no exibir.');
+            alert('funcionou o exibir!');
+        }
+    </script>
+</body>
+</html>
