@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários e JavaScript</title>
+</head>
+<body>
+    <style>
+        .block {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <!-- HTML SEMANTICO - pesquisar -->
+
+    <!-- 
+        possui o metodo GET que envia pela URL
+        e o POST que envia pela bory
+     -->
+    <form action="index.html" method="POST" onsubmit="onClickEntrar(event)">
+        <input 
+            type="email" 
+            class="block"
+            name="usuario" 
+            id="form-e-javascript-usuario"
+            placeholder="email"
+        >
+
+        <input 
+            type="password" 
+            class="block"
+            name="senha" 
+            id="form-e-javascript-senha"
+            placeholder="senha"
+        >
+
+        <input 
+            type="submit" 
+            class="block"
+            value="entrar" 
+            id="form-e-javascript-entrar"
+        >
+
+        <!-- necessário essa div para exibir o valor montado no 
+             javaScript e passado para o html via innerHTML-->
+        <div id="form-e-javascript-resultado"></div>
+    
+    </form>
+
+    <script>
+        function onClickEntrar(event){
+            //onsubmit e onclick são eventos que possuem o recarregamento da página automatico 
+
+            //para desativar a ação padrão do evento que nesse caso é recarregar a tela
+            // mas cada evento tem uma ação padrão 
+            event.preventDefault();
+            
+            let tagUsuario = document.getElementById("form-e-javascript-usuario");
+            let tagSenha = document.getElementById("form-e-javascript-senha");
+
+            // console.log(tagUsuario.value);
+            // console.log(tagSenha.value);
+        
+            let tagResultado = document.getElementById("form-e-javascript-resultado");
+            
+            // montando valor que será enviado para o html
+            let resultado = "" +
+            "você entrou com os seguintes dados: <br/>" +
+            "Usuário: " + tagUsuario.value + "<br/>" +
+            "Senha: " + tagSenha.value
+
+            // enviando o resultado para o HTML
+            tagResultado.innerHTML = resultado;
+        };
+
+    </script>
+</body>
+</html>
