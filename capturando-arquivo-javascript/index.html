@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recuperando arquivos com JavaScript</h1>
+
+    <form method="POST" action="" enctype="multipart/form-data" onsubmit="recuperarDocumento(event)">
+        <input type="file" id="capturando-arquivo-upload" name="arquivo">
+        <input type="submit" value="cadastrar">
+    </form>
+
+    <script>
+        function recuperarDocumento(evento){
+            event.preventDefault();
+
+            let arquivo = document.getElementById("capturando-arquivo-upload");
+
+            let iformacoesArquivo = arquivo.files[0];
+
+            console.log(iformacoesArquivo);
+
+
+            //como recuperar um arquivo, transformar ele em blob?
+            //como visualizar esse arquivo?
+         }
+    </script>
+</body>
+</html>
